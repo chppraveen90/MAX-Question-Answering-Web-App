@@ -14,7 +14,7 @@ limitations under the License.
 <!DOCTYPE html>
 <html>
 <head>
-    <title>MAX Question Answering Chatbot Demo</title>
+    <title>Hawking Chatbot Demo</title>
     <link rel="stylesheet" href="static/css/bootstrap.css">
     <link rel="stylesheet" href="static/css/app.css">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
@@ -27,13 +27,13 @@ limitations under the License.
             <div class="row justify-content-center">
                 <!-- Application Title -->
                 <div class="col-md-12 title-section">
-                    <h1 class="text-center">MAX Question Answering Chatbot Demo</h1>
+                    <h1 class="text-center">Hawking Chatbot Demo</h1>
                 </div>
                 <!-- /Application Title -->
                 <!-- Application Description -->
                 <div class="col-md-8" style="margin-bottom: 1rem; margin-top: 2rem;">
-                    <p>The <a href="https://github.com/IBM/MAX-Question-Answering" style="color: black; text-decoration: underline;">MAX Question Answering deep learning model</a> attempts to answer questions based on a piece of text. For this demo, the <a href="https://books.google.com/books/about/Biology_2e.html?id=JLPQtwEACAAJ" style="color: black; text-decoration: underline;">Biology textbook</a> by M. Clark, M. Douglas, and J. Choi was selected. The chatbot below is an interface to interact with the algorithm.</p>
-                    <p>Ever found yourself wondering what mitochondria are? Find out here!</p>
+                    <p>The <a href="https://git.soma.salesforce.com/hawking/hawking-app-template" style="color: black; text-decoration: underline;">Einstein Document analysis deep learning model</a> helps onboarding to Hawking Platform based of your application design document. The chatbot below is an interface to interact with the algorithm.</p>
+                    <p>Ever wondered how long will it take to use hawking platform? Find out here!</p>
                 </div>
                 <!-- /Application Description -->
                 <!-- ChatBox -->
@@ -56,7 +56,7 @@ limitations under the License.
         <div class="container-fluid">
             <footer class="footer">
                 <br/>
-                <p style="float:left">Developed at the <a href="https://developer.ibm.com/code/open/centers/codait/">IBM Center for Open-Source Data & AI Technologies.</a></p>
+                <p style="float:left">Developed by <a href="https://www.salesforce.com/products/einstein/overview/">Einstein Tools and SDK</a></p>
                 <p style="float:right">Source code available on <a href="https://github.com/IBM/MAX-Question-Answering-Web-App">GitHub</a>.</p>
             </footer>
         </div>
@@ -66,8 +66,8 @@ limitations under the License.
 <script type="text/javascript">
     let state = 1
     let matches = []
-    const defaultLoadingMessage = "QnAIT is thinking"
-    const secretLoadingMessages = ['Hold on, QnAIT is skimming the textbook for you', 'Give us a second, our bot escaped', 'Our intern is typing your answer for you']
+    const defaultLoadingMessage = "Albert is thinking"
+    const secretLoadingMessages = ['Hold on, Albert is skimming the resources for you', 'Give us a second, our bot escaped', 'Our intern is typing your answer for you']
 
     // sends request to Flask containing user input and state of conversation
     function sendRequest() {
@@ -84,7 +84,7 @@ limitations under the License.
             input = matches[parseInt(input) - 1]
         }
 
-        let loadingMessage = Math.floor(Math.random() * 10) < 5 ? defaultLoadingMessage : secretLoadingMessages[Math.floor(Math.random() * secretLoadingMessages.length)]
+        let loadingMessage = Math.floor(Math.random() * 10) < 6 ? defaultLoadingMessage : secretLoadingMessages[Math.floor(Math.random() * secretLoadingMessages.length)]
         let loadingTimeout = setTimeout(() => $("#chatbox").append(`<div class="panel-title reply loading"><i>${loadingMessage}</div>`), 1000)
 
         $.ajax({

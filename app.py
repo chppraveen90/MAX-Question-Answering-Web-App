@@ -15,7 +15,7 @@
 #
 
 from flask import Flask, render_template, request, jsonify
-from chatbot import get_opening_message, get_choice, get_topic, match, narrow, ask, end
+from chatbot import get_opening_message, get_choice, get_topic, match, narrow, ask, askDesignDocument, askScriptDocument, end
 import json
 import argparse
 
@@ -32,7 +32,9 @@ states = {
     2: match,
     3: narrow,
     4: ask,
-    5: end
+    5: askDesignDocument,
+    6: askScriptDocument,
+    7: end
 }
 
 textbook_data = None
@@ -106,6 +108,7 @@ if __name__ == "__main__":
     with open("txt.json", "r") as file:
         textbook_data = json.load(file)
     # Flatten the titles
+    #Hackathon - we can modify txt.json to frame a generic hawking guide
     titles = flattened_titles(textbook_data)
     # Start the app
     app.run(port=args.port, host="0.0.0.0", debug=False)
